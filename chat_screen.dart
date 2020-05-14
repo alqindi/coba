@@ -1304,14 +1304,6 @@ class _ChatPagesState extends State<ChatPages> {
           msg: "Check your connection/turn on your gps",
           toastLength: Toast.LENGTH_SHORT);
     } else {
-      var result = await Navigator.push(
-          context,
-          PageTransition(
-              type: PageTransitionType.fade,
-              child: MapPicker(
-                "AIzaSyB3RM2rmLCsLzuymu6IU_0kx-GNmoAaY6g",
-                LatLng(position.latitude, position.longitude),
-              )));
       if (result != null) {
         Position position = result["latlng"];
         API.sendMessage(
