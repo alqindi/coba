@@ -1626,11 +1626,6 @@ class _ChatPagesState extends State<ChatPages> {
     }
     temporaryChat.sort((a, b) => a.date.compareTo(b.date));
     listMessage.addChatAll = temporaryChat;
-    Future.delayed(Duration(milliseconds: 50), () {
-      _scrollController.scrollTo(
-          index: listMessage.getChat.length - 1,
-          duration: Duration(milliseconds: 50));
-    });
     attachment.loading = false;
     if (widget.refresh) {
       attachment.refresh = widget.refresh;
